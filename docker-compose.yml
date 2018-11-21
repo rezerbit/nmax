@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    image: ruby:2.5.1
+    volumes:
+      - ./:/nmax
+      - bundler-data:/usr/local/bundle
+    working_dir: /nmax
+    command: /bin/sh -c "while true; do sleep 30; done"
+
+volumes:
+  bundler-data:
