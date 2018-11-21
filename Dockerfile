@@ -1,4 +1,4 @@
-FROM ruby:2.5.1
+FROM ruby:2.5.3
 MAINTAINER rezerbit@gmail.com
 
 RUN apt-get update -qq \
@@ -7,7 +7,7 @@ RUN apt-get update -qq \
 
 COPY . /nmax
 WORKDIR /nmax
-RUN bundle install
+RUN gem update bundle && bundle install --without development
 ENV PATH="./bin:$PATH"
 
 VOLUME ["sample_data"]

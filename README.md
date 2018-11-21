@@ -18,8 +18,9 @@ Or you can use docker:
 ```docker
 docker run \
   -ti registry.rezerbit.com/nmax \
-  --name nmax \
-  --mount type=bind,source=/<YOUR_DIRRECTORY_WITH_SAMPLE_FILE>,target=/nmax/samle_data
+  --mount type=bind, \
+          source=<YOUR_DIRRECTORY_WITH_SAMPLE_FILE>, \
+          target=/nmax/samle_data
 
 cat samle_data/<YOUR_SAMPLE_FILE> | nmax 10000
 ```
