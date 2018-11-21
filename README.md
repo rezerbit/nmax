@@ -1,9 +1,10 @@
 # nmax
 
+💎 A script that finds n largest numbers from a text stream.
+
 [![Build Status](https://travis-ci.org/rezerbit/nmax.svg?branch=master)](https://travis-ci.org/rezerbit/nmax)
 [![Codecov](https://codecov.io/gh/rezerbit/nmax/branch/master/graph/badge.svg)](https://codecov.io/gh/rezerbit/nmax)
-
-💎 A script that finds n largest numbers from a text stream.
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/23656270db624fd285c4e645ea436150)](https://www.codacy.com/app/rezerbit/nmax?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=rezerbit/nmax&amp;utm_campaign=Badge_Grade)
 
 ## Usage
 
