@@ -16,7 +16,7 @@ cat samle_data/<YOUR_SAMPLE_FILE> | nmax 10000
 
 Or you can use docker:
 ```docker
-docker run \
+docker run --rm \
   -ti registry.rezerbit.com/nmax \
   --mount type=bind, \
           source=<YOUR_DIRRECTORY_WITH_SAMPLE_FILE>, \
