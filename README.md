@@ -9,7 +9,8 @@ If you have installed ruby:
 ```bash
 git clone git@github.com:rezerbit/nmax.git
 cd nmax
-bundle install
+export PATH="./bin:$PATH"
+setup
 cat samle_data/<YOUR_SAMPLE_FILE> | nmax 10000
 ```
 
@@ -30,7 +31,7 @@ docker-compose up
 docker exec -ti <CONTAINER_NAME> bash
 ```
 
-## How build the image for usage
+### How build the image for usage
 
 ```bash
 docker build -t registry.rezerbit.com/nmax .
