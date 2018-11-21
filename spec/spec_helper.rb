@@ -9,6 +9,11 @@ SimpleCov.start do
   minimum_coverage 90
 end
 
+if ENV['CODECOV_TOKEN']
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
+
 require 'nmax' # ATTENTION: require after simplecov
 
 RSpec.configure do |config|

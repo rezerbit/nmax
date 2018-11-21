@@ -2,9 +2,6 @@ sudo: false
 language: ruby
 rvm:
   - 2.5.3
-env:
-  global:
-    - "CI=true"
 before_install: gem install bundler
 notifications:
   - false

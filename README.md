@@ -1,6 +1,7 @@
 # nmax
 
 [![Build Status](https://travis-ci.org/rezerbit/nmax.svg?branch=master)](https://travis-ci.org/rezerbit/nmax)
+[![Codecov](https://codecov.io/gh/rezerbit/nmax/branch/master/graph/badge.svg)](https://codecov.io/gh/rezerbit/nmax)
 
 💎 A script that finds n largest numbers from a text stream.
 
