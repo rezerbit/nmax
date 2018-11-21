@@ -1,0 +1,11 @@
+log/*
+tmp/*
+coverage/
+spec/
+.gitignore
+.rspec
+.rspec_status
+.rubocop.yml
+.travis.yml
+docker-compose.yml
+vscode/
