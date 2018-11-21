@@ -2,7 +2,10 @@ version: '3'
 
 services:
   app:
-    image: ruby:2.5.1
+    container_name: nmax
+    image: ruby:2.5.3
+    environment:
+      PATH: "./bin:$PATH"
     volumes:
       - ./:/nmax
       - bundler-data:/usr/local/bundle

@@ -8,6 +8,7 @@ RUN apt-get update -qq \
 COPY . /nmax
 WORKDIR /nmax
 RUN bundle install
+ENV PATH="./bin:$PATH"
 
 VOLUME ["sample_data"]
 CMD ["/bin/bash"]
