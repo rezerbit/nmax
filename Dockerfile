@@ -1,9 +1,9 @@
 FROM ruby:2.5.3
-MAINTAINER rezerbit@gmail.com
 
 RUN apt-get update -qq \
-  && apt-get install -y build-essential \
-  && apt-get clean
+  && apt-get install -y --no-install-recommends build-essential \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 COPY . /nmax
 WORKDIR /nmax
