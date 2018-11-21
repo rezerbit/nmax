@@ -1,5 +1,7 @@
 # nmax
 
+[![Build Status](https://travis-ci.org/rezerbit/nmax.svg?branch=master)](https://travis-ci.org/rezerbit/nmax)
+
 💎 A script that finds n largest numbers from a text stream.
 
 ## Usage
