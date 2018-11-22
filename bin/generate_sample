@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+# The script that generate a file for load testing
+require_relative '../spec/support/sample_data_generator.rb'
+
+bytes_count = ARGV[0].to_i
+raise ArgumentError, 'Quantity (n) must be greater than zero' unless bytes_count.positive?
+
+SampleDataGenerator.new(
+  bytes_count: bytes_count
+).call

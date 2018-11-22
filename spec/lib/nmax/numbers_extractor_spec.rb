@@ -42,7 +42,7 @@ RSpec.describe Nmax::NumbersExtractor do
       let(:sequence) { '1234---12---12345678---' }
 
       before do
-        `rm test_log.txt`
+        `[ -e test_log.txt ] && rm test_log.txt` # Remove the file if he exists
         stub_const("#{described_class}::CHARS_LIMIT", 7)
         subject.each { |n| numbers << n }
       end

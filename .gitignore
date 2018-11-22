@@ -5,3 +5,4 @@ coverage/
 .rspec_status
 nmax_log.txt
 test_log.txt
+sample_data.txt
