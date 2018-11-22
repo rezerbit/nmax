@@ -5,7 +5,7 @@ require 'set'
 module Nmax
   # Wraps SortedSet and adds #swap_min method.
   # There is also a opportunity to make a storage using another data structure.
-  # The new storage should the same interface.
+  # A new storage should has the same interface.
   class Storage
     def initialize(enum = nil)
       @set = SortedSet.new(enum)

@@ -3,12 +3,12 @@
 require 'logger'
 
 RSpec.describe Nmax::NumbersExtractor do
-  subject { described_class.new(source: stream, logger: Logger.new(log_file)) }
-
-  let!(:stream) { simulate_stdin(sequence) }
+  let(:stream) { simulate_stdin(sequence) }
   let(:sequence) { "qwe123\n345fdsa@$#(#*$" }
   let(:numbers) { [] }
   let(:log_file) { nil }
+
+  subject { described_class.new(source: stream, logger: Logger.new(log_file)) }
 
   describe '#initialize' do
     it 'sets a source of chars' do

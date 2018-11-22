@@ -3,6 +3,9 @@
 require 'logger'
 
 RSpec.describe Nmax::Runner do
+  let(:stream) { simulate_stdin(sequence) }
+  let(:sequence) { '' }
+
   subject do
     described_class.new(
       numbers_extractor: Nmax::NumbersExtractor.new(
@@ -12,9 +15,6 @@ RSpec.describe Nmax::Runner do
       storage: Nmax::Storage.new
     )
   end
-
-  let!(:stream) { simulate_stdin(sequence) }
-  let(:sequence) { '' }
 
   before { ARGV[0] = 5 }
 
