@@ -15,7 +15,6 @@ RSpec.describe Nmax::NumbersExtractor do
       is_expected.to be_a described_class
       expect(subject.instance_variable_get(:@source)).to be stream
       expect(subject.instance_variable_get(:@logger)).to be_kind_of Logger
-      expect(subject.instance_variable_get(:@digital_chars)).to be_empty
     end
   end
 

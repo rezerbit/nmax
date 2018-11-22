@@ -16,39 +16,43 @@ module Nmax
     def initialize(source:, logger:)
       @source = source
       @logger = logger
-      @digital_chars = [] # Used array because string immutable in new ruby
     end
 
     def each(&block)
+      accumulator = [] # Used array because string is immutable in new ruby
+
       @source.each_char do |char|
         if /\d/.match?(char)
-          @digital_chars << char
+          accumulator << char
         else
-          next if @digital_chars.empty?
+          next if accumulator.empty?
 
-          handle_digital_chars(&block)
-          @digital_chars.clear
+          create_number(accumulator)
+          accumulator.clear # Should be before calling of a block
+
+          handle_number(&block)
         end
       end
     end
 
     private
 
-    def handle_digital_chars
-      if digital_chars_valid?
-        yield digital_sequence
+    def create_number(accumulator)
+      @number_as_string = accumulator.join
+      @number = @number_as_string.to_i
+    end
+
+    def handle_number
+      if number_valid?
+        yield @number
       else
-        # TODO: Clarify how to handle invalid digital sequence
-        @logger.warn("Invalid digital sequence: #{@digital_chars.join}")
+        # TODO: Clarify how to handle invalid number
+        @logger.warn("Invalid digital sequence: #{@number_as_string}")
       end
     end
 
-    def digital_chars_valid?
-      @digital_chars.size <= CHARS_LIMIT
-    end
-
-    def digital_sequence
-      @digital_chars.join.to_i
+    def number_valid?
+      @number_as_string.size <= CHARS_LIMIT
     end
   end
 end
