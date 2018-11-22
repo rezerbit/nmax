@@ -37,6 +37,16 @@ RSpec.describe Nmax::Storage do
     end
   end
 
+  describe '#include?' do
+    it 'returns true if element included' do
+      expect(subject.include?(4)).to be_truthy
+    end
+
+    it 'returns false if element not included' do
+      expect(subject.include?(1)).to be_falsey
+    end
+  end
+
   describe '#min' do
     it 'returns a minimal element' do
       expect(subject.min).to eq 2

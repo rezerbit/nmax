@@ -19,6 +19,10 @@ module Nmax
       @set.delete(element)
     end
 
+    def include?(element)
+      @set.include?(element)
+    end
+
     def min
       @set.min
     end
