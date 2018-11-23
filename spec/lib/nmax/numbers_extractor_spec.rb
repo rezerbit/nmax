@@ -37,7 +37,7 @@ RSpec.describe Nmax::NumbersExtractor do
       end
     end
 
-    context 'when the stream has invalid digital sequence' do
+    context 'when the stream has an invalid digital sequence' do
       let(:log_file) { 'test_log.txt' }
       let(:sequence) { '1234---12---12345678---' }
 

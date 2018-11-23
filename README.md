@@ -19,27 +19,35 @@ cat samle_data/<YOUR_SAMPLE_FILE> | nmax 10000
 ```
 
 Or you can use docker:
-```docker
-docker run --rm \
-  -ti registry.rezerbit.com/nmax \
-  --mount type=bind, \
-          source=<YOUR_DIRRECTORY_WITH_SAMPLE_FILE>, \
-          target=/nmax/samle_data
+```bash
+docker run --rm -ti\
+  -v <YOUR_DIRRECTORY_WITH_SAMPLE_FILE>:/nmax/sample_data \
+  registry.rezerbit.com/nmax
 
-cat samle_data/<YOUR_SAMPLE_FILE> | nmax 10000
+cat sample_data/<YOUR_SAMPLE_FILE> | nmax 10000
+```
+
+For example:
+```bash
+docker run --rm -ti\
+  -v /Users/rezerbit/projects/nmax/spec/fixtures:/nmax/sample_data \
+  registry.rezerbit.com/nmax
+
+cat sample_data/small_sample_data.txt | nmax 10
+```
+
+## How build and push the image for usage
+
+```bash
+docker build -t registry.rezerbit.com/nmax .
+docker push registry.rezerbit.com/nmax
 ```
 
 ## Development in a container
 
 ```bash
 docker-compose up
-docker exec -ti <CONTAINER_NAME> bash
-```
-
-### How build the image for usage
-
-```bash
-docker build -t registry.rezerbit.com/nmax .
+docker exec -ti nmax bash
 ```
 
 ## License

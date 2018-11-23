@@ -19,20 +19,20 @@ RSpec.describe Nmax do
     end
   end
 
+  # Load tests skipped because they take a long time.
   # Generate 'sample_data.txt' file into project root before load testing.
   # Run in terminal:
-  #   $ generate_sample 4294967296
+  #   $ generate_sample 42949672960
   #
-  # 1024 x 1024 X 1024 x 40 = 40 GB = 4294967296 B
-  describe 'Load test (Random generated stream)' do
-    it do
-      pending 'Disabled because the test takes a long time'
+  # 1024 x 1024 X 1024 x 4 = 40 GB = 42949672960 B
+  #
+  describe 'Load tests (Random generated stream)' do
+    xit do
       expect(`cat sample_data.txt | nmax 5`.split("\n").size).to eq 5
     end
 
     context 'when the N argument is large' do
-      it do
-        pending 'Disabled because the test takes a long time'
+      xit do
         expect(`cat sample_data.txt | nmax 100_000`.split("\n").size).to eq 100_000
       end
     end
